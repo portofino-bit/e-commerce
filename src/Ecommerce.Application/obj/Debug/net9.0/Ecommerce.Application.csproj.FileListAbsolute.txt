@@ -1,0 +1,12 @@
+C:\Users\LENOVO\Ecommerce\src\Ecommerce.Application\bin\Debug\net9.0\Ecommerce.Application.deps.json
+C:\Users\LENOVO\Ecommerce\src\Ecommerce.Application\bin\Debug\net9.0\Ecommerce.Application.dll
+C:\Users\LENOVO\Ecommerce\src\Ecommerce.Application\bin\Debug\net9.0\Ecommerce.Application.pdb
+C:\Users\LENOVO\Ecommerce\src\Ecommerce.Application\obj\Debug\net9.0\Ecommerce.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\LENOVO\Ecommerce\src\Ecommerce.Application\obj\Debug\net9.0\Ecommerce.Application.AssemblyInfoInputs.cache
+C:\Users\LENOVO\Ecommerce\src\Ecommerce.Application\obj\Debug\net9.0\Ecommerce.Application.AssemblyInfo.cs
+C:\Users\LENOVO\Ecommerce\src\Ecommerce.Application\obj\Debug\net9.0\Ecommerce.Application.csproj.CoreCompileInputs.cache
+C:\Users\LENOVO\Ecommerce\src\Ecommerce.Application\obj\Debug\net9.0\Ecommerce.Application.sourcelink.json
+C:\Users\LENOVO\Ecommerce\src\Ecommerce.Application\obj\Debug\net9.0\Ecommerce.Application.dll
+C:\Users\LENOVO\Ecommerce\src\Ecommerce.Application\obj\Debug\net9.0\refint\Ecommerce.Application.dll
+C:\Users\LENOVO\Ecommerce\src\Ecommerce.Application\obj\Debug\net9.0\Ecommerce.Application.pdb
+C:\Users\LENOVO\Ecommerce\src\Ecommerce.Application\obj\Debug\net9.0\ref\Ecommerce.Application.dll

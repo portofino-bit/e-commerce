@@ -8,5 +8,7 @@ public class Cart : BaseEntity
 
     public User User { get; set; } = default!;
 
+    public decimal TotalPrice { get; set; }
+
     public ICollection<CartItem> CartItems { get; set; } = new List<CartItem>();
 }
