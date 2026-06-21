@@ -1,10 +1,5 @@
-﻿namespace Ecommerce.IntegrationTests;
+﻿// This file has been replaced with comprehensive integration tests in the Controllers folder
+// - ProductsControllerIntegrationTests.cs
+// - CartControllerIntegrationTests.cs
+// - OrdersControllerIntegrationTests.cs
 
-public class UnitTest1
-{
-    [Fact]
-    public void Test1()
-    {
-
-    }
-}

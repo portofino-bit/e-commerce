@@ -1,10 +1,5 @@
-﻿namespace Ecommerce.UnitTests;
+﻿// This file has been replaced with comprehensive unit tests in the Services folder
+// - ProductServiceTests.cs
+// - CartServiceTests.cs
+// - OrderServiceTests.cs
 
-public class UnitTest1
-{
-    [Fact]
-    public void Test1()
-    {
-
-    }
-}
