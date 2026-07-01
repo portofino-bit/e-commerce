@@ -27,6 +27,21 @@ public class UserConfiguration : IEntityTypeConfiguration<User>
         builder.HasIndex(x => x.Email)
             .IsUnique();
 
+        builder.Property(x => x.PasswordHash)
+            .IsRequired();
+
+        builder.Property(x => x.PhoneNumber)
+            .HasMaxLength(20);
+
+        builder.Property(x => x.Role)
+            .IsRequired()
+            .HasConversion<int>();
+
+        builder.Property(x => x.RefreshToken)
+            .HasMaxLength(500);
+
+        builder.Property(x => x.RefreshTokenExpiryUtc);
+
         builder.HasQueryFilter(x => !x.IsDeleted);
     }
 }

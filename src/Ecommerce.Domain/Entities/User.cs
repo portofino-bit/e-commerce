@@ -1,4 +1,5 @@
 using Ecommerce.Domain.Common;
+using Ecommerce.Domain.Enums;
 
 namespace Ecommerce.Domain.Entities;
 
@@ -13,6 +14,12 @@ public class User : BaseEntity
     public string PasswordHash { get; set; } = default!;
 
     public string PhoneNumber { get; set; } = default!;
+
+    public Role Role { get; set; } = Role.Customer;
+
+    public string? RefreshToken { get; set; }
+
+    public DateTime? RefreshTokenExpiryUtc { get; set; }
 
     public ICollection<Order> Orders { get; set; } = new List<Order>();
 

@@ -1,9 +1,12 @@
+using System.Security.Claims;
 using Ecommerce.Application.DTOs.Orders;
 using Ecommerce.Application.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Ecommerce.API.Controllers;
 
+[Authorize]
 [ApiController]
 [Route("api/orders")]
 public class OrdersController : ControllerBase
@@ -15,16 +18,18 @@ public class OrdersController : ControllerBase
         _orderService = orderService;
     }
 
-    [HttpGet("{userId:guid}")]
-    public async Task<IActionResult> GetOrders(Guid userId)
+    [HttpGet]
+    public async Task<IActionResult> GetOrders()
     {
+        var userId = GetUserId();
         var orders = await _orderService.GetAllForUserAsync(userId);
         return Ok(orders);
     }
 
-    [HttpGet("{userId:guid}/{orderId:guid}")]
-    public async Task<IActionResult> GetOrder(Guid userId, Guid orderId)
+    [HttpGet("{orderId:guid}")]
+    public async Task<IActionResult> GetOrder(Guid orderId)
     {
+        var userId = GetUserId();
         var order = await _orderService.GetByIdAsync(userId, orderId);
 
         if (order is null)
@@ -35,17 +40,25 @@ public class OrdersController : ControllerBase
         return Ok(order);
     }
 
-    [HttpPost("{userId:guid}/checkout")]
-    public async Task<IActionResult> Checkout(Guid userId, CreateOrderDto request)
+    [HttpPost("checkout")]
+    public async Task<IActionResult> Checkout(CreateOrderDto request)
     {
+        var userId = GetUserId();
         var orderId = await _orderService.CheckoutAsync(userId, request);
-        return CreatedAtAction(nameof(GetOrder), new { userId, orderId }, orderId);
+        return CreatedAtAction(nameof(GetOrder), new { orderId }, orderId);
     }
 
-    [HttpPut("{userId:guid}/{orderId:guid}/cancel")]
-    public async Task<IActionResult> CancelOrder(Guid userId, Guid orderId)
+    [HttpPut("{orderId:guid}/cancel")]
+    public async Task<IActionResult> CancelOrder(Guid orderId)
     {
+        var userId = GetUserId();
         await _orderService.CancelAsync(userId, orderId);
         return NoContent();
+    }
+
+    private Guid GetUserId()
+    {
+        var userIdClaim = User.FindFirstValue(ClaimTypes.NameIdentifier);
+        return Guid.Parse(userIdClaim!);
     }
 }
